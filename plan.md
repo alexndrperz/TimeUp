@@ -18,11 +18,12 @@ En la vista de project details perfecta pero quita el boton add, La vista profil
 
 Osea, en vez de 
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/61795117-3fe6-4c69-8a59-4cb101a248dc)
 
 sea algo mas
 
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/ed93fa92-cd38-4d11-9d1d-e28d65683425)
+
 
 
 Las opciones son dashboard, asignments, backlog y profile, ademas de un menu lateral que dirija a settings, todo eso sin contar log in. 
