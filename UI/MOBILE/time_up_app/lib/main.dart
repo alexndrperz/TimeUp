@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'presentation/screens/auth/login_page.dart';
+import 'package:time_up_app/routes/route_manager.dart';
 
 void main() {
   runApp(const TimeUpApp());
@@ -12,9 +11,10 @@ class TimeUpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Tu App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
-      home: const LoginPage(),
+      initialRoute: RouteManager.login,
+      onGenerateRoute: RouteManager.generateRoute,
     );
   }
 }

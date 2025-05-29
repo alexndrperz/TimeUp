@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:time_up_app/data/datasources/remote/login_api_source.dart';
+import 'package:time_up_app/presentation/screens/auth/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +10,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  late final LoginController _controller;
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = LoginController(LoginApiSource());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 30),
                 TextFormField(
+                  controller: _emailController,
                   decoration: const InputDecoration(
                     hintText: 'Email',
                     border: OutlineInputBorder(
@@ -51,6 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
                     hintText: 'Contraseña',
@@ -92,7 +107,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      // Handle login
+                      _controller.login(
+                        context: context,
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
                     },
                     child: const Text(
                       'Iniciar Sesión',
