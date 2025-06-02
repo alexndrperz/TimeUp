@@ -3,8 +3,7 @@
 // import 'dart:convert';
 
 class LoginApiSource {
-  final String _baseUrl =
-      'https://api.tuapp.com'; // Cambia esto por tu API real
+  // final String _baseUrl ='https://api.tuapp.com'; // Cambia esto por tu API real
 
   Future<bool> login({required String email, required String password}) async {
     // final url = Uri.parse('$_baseUrl/login');
